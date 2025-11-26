@@ -4,13 +4,14 @@ import com.lucas.lancamento.credito.modelos.Compra;
 import com.lucas.lancamento.credito.modelos.Conta;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
 public class Iteration {
 
     public void finalPrint(List<Compra> compras, double saldo){
-        Collections.sort(compras);
+        Collections.sort(compras, Comparator.comparingDouble(Compra::getValor));
         StringBuilder sb = new StringBuilder();
         sb.append("*************************\n");
         sb.append("\nCOMPRAS REALIZADAS: \n");
